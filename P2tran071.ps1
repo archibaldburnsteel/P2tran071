@@ -1,7 +1,6 @@
-# P2tran071
 <#
     .SYNOPSIS
-        Creates MSP TRAN071 
+        Creates MSP TRAN071 from passport csv
     .DESCRIPTION
 
     .PARAMETER NA
@@ -17,7 +16,7 @@
     .LINK
 
     .NOTES
-        Author:  Andrew Solomon
+        Author:  A. S.
         Last Edit:  2022-11-04
         Version 1.0 - initial release
 #>
@@ -59,4 +58,3 @@ foreach ($rec in $content) {
 $sb2.AppendLine('071830##751' + $lnCOunt.PadLeft(5,'0') + $sum.ToString('#000000000') +" ".PadRight(31,' ') + '2')
 $sb2.Append($sb.tostring())
 [IO.File]::WriteAllLines('C:\blah\tran071.txt', $sb2.ToString())
-Creates tran071 for msp payments from passport export in csv format
